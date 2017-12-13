@@ -141,3 +141,28 @@ average_salary_by_bucket = {tenure_bucket: sum(salaries) / len(salaries)
                             for tenure_bucket, salaries in salary_by_tenure_bucket.items()
 }
 # print(average_salary_by_bucket)
+
+# paid_non_paid = [(0.7, "paid"),
+#     (1.9, "unpaid"),
+#     (2.5, "paid"),
+#     (4.2,"unpaid"),
+#     (6,"unpaid"),
+#     (6.5,"unpaid"),
+#     (7.5,"unpaid"),
+#     (8.1,"unpaid"),
+#     (8.7, "paid"),
+#      (10, "paid")]
+
+def predict_paid_or_unpaid(years_experience):
+    if years_experience < 3.0:
+        return "paid"
+    elif years_experience < 8.5:
+        return "unpaid"
+    else:
+        return "paid"
+
+words_and_counts = Counter(word for user, interest in interests
+                           for word in interest.lower().split())
+for word, count in words_and_counts.most_common():
+    if count>1:
+        print (word,count)
